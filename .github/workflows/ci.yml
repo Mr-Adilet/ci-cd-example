@@ -5,6 +5,7 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Загрузка кода
         uses: actions/checkout@v3
@@ -14,5 +15,6 @@ jobs:
           echo "Проверяем код..."
           ls -la
           echo "CI успешно выполнен!"
-                - name: Проверка HTML run: test -f index.html && echo "Файл найден!"
 
+      - name: Проверка HTML
+        run: test -f index.html && echo "Файл найден!"
